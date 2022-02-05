@@ -13,13 +13,14 @@
                     <form method="POST">
                         {{form | crispy}}
                         {% csrf_token%}
-                        <button type='submit' class='float-right'>Save Address</button>
+                        
+                        
                     </form>
-
+                    <button type="submit" class="btn btn-success float-right mt-2">Save Address</button>  
                 </div>
-
+               
             </div>
-
+            
         </div>
         <div class='col-md-3'>
             <div class="card" style='height:auto;'>
@@ -43,7 +44,11 @@
 
             </div>
             {% if saved_address.is_fully_filled %}
-            <a href="{% url 'App_Payment:payment'%}"><button>Make Payment</button></a>
+            <div class="d-grid gap-2">
+                
+                <a href="{% url 'App_Payment:payment'%}" class="btn btn-success">Make Payment</a>
+              </div>
+            
             {%else%}
             <div class='alert alert-info'>
                 <p>Please fill up all the information to make payment</p>

@@ -3,16 +3,16 @@
 {% block title_block%}Product Details{%endblock%}
 
 {% block body_block%}
-
-<div class="container my-5">
-    <div class="card">
+<div class='border border-light border-5'>
+<div class="container my-5 border-start-0">
+    <div class="">
         <div class="row">
-            <aside class="col-sm-5 border-right">
+            <aside class="col-sm-5">
                 <article class="gallery-wrap">
                     <div class="img-big-wrap">
                       
                             <div class="">
-                                <a href="#"><img src="/media/{{object.mainimage}}" style="width: 450px;"></a>
+                                <a href="#"><img src="/media/{{object.mainimage}}" style="width: 450px; height:auto;" class='mt-4'></a>
                             </div>
                         </div>
                     
@@ -32,10 +32,11 @@
                         </dt>
                         <dd><p>{{object.detail_text | linebreaks}}</p></dd>
                     </dl>
-                    <a href="{% url 'App_Order:add' pk=object.pk%}"><i class="fas fa-shopping-cart"></i>Add to cart</a>
+                    <a href="{% url 'App_Order:add' pk=object.pk%}" class='btn btn-success'><i class="fas fa-shopping-cart"></i>&nbsp;&nbsp;Add to cart</a>
                 </article>
             </aside>
         </div>
     </div>
+</div>
 </div>
 {% endblock %}

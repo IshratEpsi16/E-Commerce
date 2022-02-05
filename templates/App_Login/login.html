@@ -2,13 +2,17 @@
 {% load crispy_forms_tags%}
 {% block title_block%} Login {%endblock%}
 {% block body_block%}
-<h2>Login : </h2>
-<form method="POST">
+<div class='container '>
+<h2 class='text-center text-success p-2'>Login </h2>
+<form method="POST" class='text-center'>
     {{form | crispy}}
     {% csrf_token%}
-    <button type='submit'>Login</button>
+    
+    <button type="submit" class="btn btn-success mt-3">Login</button>
     </form>
     <br>
-<p>Doesn't have an account? <a href="{% url 'App_Login:signup'%}">Sign Up Now</a></p>
-
+<p class='text-center '>Doesn't have an account? <br>
+    <a href="{% url 'App_Login:signup'%}"  type="button" class="btn btn-outline-warning " style='text-decoration:none;'>Sign Up Now</a></p>
+    
 {%endblock%}
+</div>

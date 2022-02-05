@@ -2,12 +2,14 @@
 {% load crispy_forms_tags %}
 {% block title_block%} Sign Up{%endblock%}
 {% block body_block%}
-<h2> Create New Account: </h2>
-<form method="POST">
+
+<h2 class=' text-success mt-2'> Create New Account: </h2>
+<form method="POST" >
 {{form | crispy}}
 {% csrf_token%}
-<button type='submit'>Create Account</button>
+
+<button type="submit" class="btn btn-success mt-3">Create Account</button>
 </form>
 <br>
-<p>Already have an account? <a href="{%url 'App_Login:login'%}">Login Here</a></p>
+<p >Already have an account? <a href="{%url 'App_Login:login'%}"  type="button" class="btn btn-outline-warning " style='text-decoration:none;'>Login Here</a></p>
 {%endblock%}

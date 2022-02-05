@@ -1,13 +1,28 @@
 {% extends 'base.html'%}
 {% load crispy_forms_tags%}
-{% block title_block%} Profile {%endblock%}
+{% block title_block%} {{request.user.profile.username}}'s Profile {%endblock%}
 {% block body_block%}
 
-<form method="POST">
-    {{form | crispy}}
-    {% csrf_token%}
-    <button type='submit'>Save</button>
-    </form>
-
-
+<h1 class='text-center text-success p-2'>Welcome {{request.user.profile.username}}!</h1>
+<div class="d-grid gap-2">
+    <button class="btn btn-success" type="button">Edit Your Profile</button>
+    <p class='text-danger fs-6 fw-bold'>Fill all the boxes otherwise you will be unable to order products!</p>
+    
+  </div>
+  <div class="card" style="width: 70rem; height:40rem;">
+    
+    <div class="card-body">
+        <form method="POST">
+    
+            {{form | crispy}}
+            {% csrf_token%}
+            
+            </form>
+            
+    </div>
+  </div>
+  <div class="d-grid gap-2">
+  <button type="submit" class="btn btn-success mt-2">Save</button>
+</div>
+    
 {%endblock%}
